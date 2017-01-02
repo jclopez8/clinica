@@ -14,7 +14,7 @@
 	  <div id="div_cent_expanded">
 			<h2>Tablero enfermeras</h2>
 
-	   <form:form  action="/sanantial/tablero/enfermeras" method="post"  name="tableroEnfermerasForm" id="tableroEnfermerasForm">
+	   <form:form  action="/clinicaweb/tablero/enfermeras" method="post"  name="tableroEnfermerasForm" id="tableroEnfermerasForm">
 	   		    <input type="hidden" id="statusToChange" name="statusToChange" value="factt" />
 	   		     <input type="hidden" id="citaToChange" name="citaToChange" value="1" />
 	   		   <input type="hidden" id="tratamientoDeleted" name="tratamientoDeleted" value="1" />

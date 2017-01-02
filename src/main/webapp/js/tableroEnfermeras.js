@@ -28,7 +28,7 @@ function salvarNota(){
 	docOpener.getElementById("citaToChange").value=document.getElementById("citaToChangePopup").value;
 	
 	self.close();
-	theForm.action="/sanantial/salvar/nota";
+	theForm.action="/clinicaweb/salvar/nota";
 	theForm.submit();
 
 }
@@ -66,7 +66,7 @@ function quitarTratamiento(citaId,tratamientoId){
 	document.getElementById("citaToChange").value=citaId;
 	document.getElementById("tratamientoDeleted").value=tratamientoId;
 	document.tableroEnfermerasForm.method="POST";
-	document.tableroEnfermerasForm.action="/sanantial/quitar/tratamiento";
+	document.tableroEnfermerasForm.action="/clinicaweb/quitar/tratamiento";
 	document.tableroEnfermerasForm.submit();
 }
 
@@ -76,6 +76,6 @@ function salvarEnfermera(citaId){
 	document.getElementById("citaToChange").value=citaId;
 	document.tableroEnfermerasForm.enfermeraToAdd.value=document.getElementById("enfermerasCombo"+citaId).value;
 	document.tableroEnfermerasForm.method="POST";
-	document.tableroEnfermerasForm.action="/sanantial/salvar/enfermera";
+	document.tableroEnfermerasForm.action="/clinicaweb/salvar/enfermera";
 	document.tableroEnfermerasForm.submit();
 }

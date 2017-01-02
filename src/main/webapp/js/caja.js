@@ -214,7 +214,7 @@ function cobrar(){
 	generarRows('Tratamiento');
 	generarRows('Medicamento');
 	generarRows('Consulta');
-	document.cajaForm.action="/sanantial/caja/cobrar";
+	document.cajaForm.action="/clinicaweb/caja/cobrar";
 	document.cajaForm.submit();
 }
 
@@ -344,7 +344,7 @@ function quitarElemento(){
 		
 		$.ajax({  
 		     type : "Get",   
-		     url : "/sanantial/caja/eliminar",   
+		     url : "/clinicaweb/caja/eliminar",   
 		     data : ({elementosDeleted : elementosDeleted, tratamientosDeleted:tratamientosDeleted, citasId:citasId } ),  
 		     
 		     success : function(response) {  

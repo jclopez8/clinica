@@ -11,7 +11,7 @@
 	  <div id="div_cent_expanded">
 			<h2>Tablero ingreso</h2>
 
-	   <form:form  action="/sanantial/ingresar/paciente" method="post"  name="ingresarPacienteForm" >
+	   <form:form  action="/clinicaweb/ingresar/paciente" method="post"  name="ingresarPacienteForm" >
 	   		      <input type="hidden" id="statusToChange" name="statusToChange" value="factt" />
 	   		     <input type="hidden" id="citasId" name="citasId" value="1" />
 	   		        <input type="hidden" id="citaToChange" name="citaToChange" value="1" />

@@ -51,7 +51,7 @@
 	function Terminar(){
 		//alert('Terminar Guardando...');
 		//alert("citasId: "+document.getElementById("citasId").value);
-		document.agregarMedicamentoForm.action='/sanantial/guardar/medicamento';
+		document.agregarMedicamentoForm.action='/clinicaweb/guardar/medicamento';
 		document.agregarMedicamentoForm.submit();
 	}
 	
@@ -59,7 +59,7 @@
 	function Cancelar(){
 		//alert('Terminar Guardando...');
 		//alert("citasId: "+document.getElementById("citasId").value);
-		document.agregarMedicamentoForm.action='/sanantial/cancelar/medicamento';
+		document.agregarMedicamentoForm.action='/clinicaweb/cancelar/medicamento';
 		document.agregarMedicamentoForm.submit();
 	}
 	

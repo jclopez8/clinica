@@ -9,7 +9,7 @@
 	  <div id="center">
 			<h2>Alta Paciente</h2>
 		
-		  <form:form modelAttribute="paciente" action="/sanantial/salvar/paciente" method="post" name="altaPacienteForm" id="altaPacienteForm" >
+		  <form:form modelAttribute="paciente" action="/clinicaweb/salvar/paciente" method="post" name="altaPacienteForm" id="altaPacienteForm" >
 			<table class="input_table_items"> 
 			    <tr>
 				      <td>

@@ -8,7 +8,7 @@
 			
 			
 			
-		  <form:form modelAttribute="medicamento" action="/sanantial/salvar/medicamento" method="post" name="altaMedicamentoForm" id="altaMedicamentoForm" >
+		  <form:form modelAttribute="medicamento" action="/clinicaweb/salvar/medicamento" method="post" name="altaMedicamentoForm" id="altaMedicamentoForm" >
 			<table > 
 			    <tr>
 			      <td>

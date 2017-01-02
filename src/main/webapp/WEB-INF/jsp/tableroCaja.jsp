@@ -5,7 +5,7 @@
 	  <div id="div_cent_expanded">
 			<h2>Tablero Caja</h2>
 
-	   <form:form  action="/sanantial/tablero/doctores" method="post"  name="tableroDoctoresForm" id="tableroDoctoresForm">
+	   <form:form  action="/clinicaweb/tablero/doctores" method="post"  name="tableroDoctoresForm" id="tableroDoctoresForm">
 	   		    <input type="hidden" id="statusToChange" name="statusToChange" value="factt" />
 	   		     <input type="hidden" id="citaToChange" name="citaToChange" value="1" />
 	   		   

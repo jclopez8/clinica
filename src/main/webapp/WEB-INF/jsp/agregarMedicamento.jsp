@@ -9,7 +9,7 @@
 	<div id="main">
 	  <div id="center">
 			<h2>Agregar Medicamento</h2>
-			 <form:form  action="/sanantial/agregar/medicamento" method="post"  name="agregarMedicamentoForm">
+			 <form:form  action="/clinicaweb/agregar/medicamento" method="post"  name="agregarMedicamentoForm">
 			    <input type="hidden" id="verificadosHist" name="verificadosHist" value="${verificadosHist}" />
 		     	    <input type="hidden" id="citasId" name="citasId"  value="${citasId}" />
 		     	     <input type="hidden" id="viewToBack" name="viewToBack" value="${viewToBack}" />

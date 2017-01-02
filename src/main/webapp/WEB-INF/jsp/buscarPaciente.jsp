@@ -7,7 +7,7 @@
 	<div id="main">
 	  <div id="center">
 			<h2>Buscar Paciente <c:choose><c:when test = "${reporteMedico == 'true'}">para acceder al Reporte Medico</c:when></c:choose></h2>
-			 <form:form  action="/sanantial/buscar/paciente" method="post"  name="buscarPacienteForm" >
+			 <form:form  action="/clinicaweb/buscar/paciente" method="post"  name="buscarPacienteForm" >
 		     	<table   width="100%" height="230">
 					<tr>
 					    <td width="16%" height="94">

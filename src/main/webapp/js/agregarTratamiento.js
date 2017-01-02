@@ -49,13 +49,13 @@
 	
 	function Terminar(){
 		//alert('Terminar...');
-		document.agregarTratamientoForm.action='/sanantial/guardar/tratamiento';
+		document.agregarTratamientoForm.action='/clinicaweb/guardar/tratamiento';
 		document.agregarTratamientoForm.submit();
 	}
 	
 	function Cancelar(){
 		//alert('Terminar...');
-		document.agregarTratamientoForm.action='/sanantial/cancelar/tratamiento';
+		document.agregarTratamientoForm.action='/clinicaweb/cancelar/tratamiento';
 		document.agregarTratamientoForm.submit();
 	}
 	

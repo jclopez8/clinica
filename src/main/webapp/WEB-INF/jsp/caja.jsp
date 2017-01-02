@@ -7,7 +7,7 @@
 
 	<div id="main">
 	  <div id="div_cent_expanded">
-			<form:form  action="/sanantial/caja/nota" method="post"  id="cajaForm" name="cajaForm" >
+			<form:form  action="/clinicaweb/caja/nota" method="post"  id="cajaForm" name="cajaForm" >
 			 <input type="hidden" id="citasId" name="citasId" value="${citas.citasId}" />
 			 <table border="0" width="100%" height="222" class="caja">
 			 

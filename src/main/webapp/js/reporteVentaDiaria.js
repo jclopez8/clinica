@@ -55,7 +55,7 @@ function quitarIngreso(ingresoId){
 	//alert('quitar ingreso..'+ingresoId);
 	document.reporteVentasForm.hiddenIngresoId.value=ingresoId;
 	document.reporteVentasForm.method="POST";
-	document.reporteVentasForm.action="/sanantial/quitar/ingreso";
+	document.reporteVentasForm.action="/clinicaweb/quitar/ingreso";
 	document.reporteVentasForm.submit();
 }
 
@@ -64,7 +64,7 @@ function quitarGasto(gastoId){
 	//alert('quitar gasto..'+gastoId);
 	document.reporteVentasForm.hiddenGastoId.value=gastoId;
 	document.reporteVentasForm.method="POST";
-	document.reporteVentasForm.action="/sanantial/quitar/gasto";
+	document.reporteVentasForm.action="/clinicaweb/quitar/gasto";
 	document.reporteVentasForm.submit();
 }
 

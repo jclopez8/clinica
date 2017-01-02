@@ -11,13 +11,13 @@
 		}
 	
 	function altaReporteMedico(pacienteId){
-		var url = '/sanantial/alta/reporte_medico?pacienteId='+pacienteId;
+		var url = '/clinicaweb/alta/reporte_medico?pacienteId='+pacienteId;
 		window.location.href=url;
 	}
 	function altaPaciente(pacienteId){
 		//alert('alta Paciente...'+pacienteId);
 		//document.buscarPacienteForm.method='get';
-		var url = '/sanantial/alta/cita?pacienteId='+pacienteId;
+		var url = '/clinicaweb/alta/cita?pacienteId='+pacienteId;
 		//alert(url);
 		window.location.href=url;
 

@@ -80,23 +80,20 @@
 				<a >Alta</a>
 				<ul>
 					<li>
-						<a href="/sanantial/buscar/paciente">Cita</a>
+						<a href="/clinicaweb/buscar/paciente">Cita</a>
 					</li>
                     <li>
-						<a href="/sanantial/alta/paciente">Paciente</a>
+						<a href="/clinicaweb/alta/paciente">Paciente</a>
 					</li>
                     <li>
-						<a href="/sanantial/alta/medicamento">Medicamento</a>
+						<a href="/clinicaweb/alta/medicamento">Medicamento</a>
 
 					</li>
 					 <li>
-						<a href="/sanantial/alta/tratamiento">Tratamiento</a>
+						<a href="/clinicaweb/alta/tratamiento">Tratamiento</a>
 
 					</li>
-<!-- 					<li> -->
-<!-- 						<a href="/sanantial/buscar/paciente?reporteMedico=true">Reporte Medico</a> -->
 
-<!-- 					</li> -->
 
 				</ul>
 			 </li>
@@ -107,12 +104,12 @@
 					<ul>
 					 <c:if test="${fex:isPermitted(sessionScope.exclusionesNumbers,3)}">
 						<li>
-							<a href="/sanantial/tablero/doctores">Tablero Doctores</a>
+							<a href="/clinicaweb/tablero/doctores">Tablero Doctores</a>
 						</li>
 					 </c:if>
 					 <c:if test="${fex:isPermitted(sessionScope.exclusionesNumbers,4)}">
 	                    <li>
-							<a href="/sanantial/tablero/enfermeras">Tablero Enfermeras</a>
+							<a href="/clinicaweb/tablero/enfermeras">Tablero Enfermeras</a>
 						</li>
 					 </c:if>
 					</ul>
@@ -123,10 +120,10 @@
 					<a >Caja</a>
 					<ul>
 	                    <li>
-							<a href="/sanantial/tablero/caja">Tablero Caja</a>
+							<a href="/clinicaweb/tablero/caja">Tablero Caja</a>
 						</li>
 	                    <li>
-							<a href="/sanantial/buscar/reporte_ventas">Ventas Diarias</a>
+							<a href="/clinicaweb/buscar/reporte_ventas">Ventas Diarias</a>
 						</li>
 	
 					</ul>
@@ -134,11 +131,11 @@
 			 </c:if>
              <li>
              <c:if test="${fex:isPermitted(sessionScope.exclusionesNumbers,1)}">
-				<a href="/sanantial/ingresar/paciente">Ingresar Paciente</a>
+				<a href="/clinicaweb/ingresar/paciente">Ingresar Paciente</a>
 			</c:if>
 			 </li>	
 			 <li>
-	    		<a href="/sanantial/logout">Salir</a>
+	    		<a href="/clinicaweb/logout">Salir</a>
 			 </li>	
 		    </ul>
             </td>

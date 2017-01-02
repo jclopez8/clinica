@@ -13,7 +13,7 @@ function quitarTratamiento(citaId,tratamientoId){
 	document.getElementById("citaToChange").value=citaId;
 	document.getElementById("tratamientoDeleted").value=tratamientoId;
 	document.ingresarPacienteForm.method="POST";
-	document.ingresarPacienteForm.action="/sanantial/quitar/tratamientoIngresar";
+	document.ingresarPacienteForm.action="/clinicaweb/quitar/tratamientoIngresar";
 	document.ingresarPacienteForm.submit();
 }
 

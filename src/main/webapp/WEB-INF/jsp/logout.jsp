@@ -5,7 +5,7 @@
 			<table>
    			 <tr align="center">
 	   			  <td>
-		   			  <p class="error">Session cerrada</p><a href="/sanantial/autentia">Login</a>
+		   			  <p class="error">Session cerrada</p><a href="/clinicaweb/autentia">Login</a>
 					
 				</td>
 			</tr>
