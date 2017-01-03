@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.sanantial.entity.Citas;
+import com.sanantial.entity.Cita;
 import com.sanantial.entity.Medicamento;
 import com.sanantial.entity.NotaVenta;
 import com.sanantial.entity.Paciente;
@@ -153,14 +153,14 @@ public class AltaController {
         String hora = request.getParameter("hora");
        	final Paciente paciente = pacienteService.findById(pacienteId);
     	
-    	  List<Citas> listCitaPacienteHoy = citaService.buscarCitas(Utils.getFormatedDate(fecha,"yyyy-MM-dd"),paciente);
+    	  List<Cita> listCitaPacienteHoy = citaService.buscarCitas(Utils.getFormatedDate(fecha,"yyyy-MM-dd"),paciente);
     	 if( Utils.compareToDates(Utils.getFormatedDate(fecha,"yyyy-MM-dd"), Utils.getFormatedDate())<0){
     		 model.addAttribute("saved", "invalidDate");
  			return "nuevaCita";
     	 }
     	  
     	  if(listCitaPacienteHoy.size()==0){
-		    	Citas citas = new Citas();
+		    	Cita citas = new Cita();
 		    	citas.setPaciente(paciente);
 		        citas.setFecha(Utils.getFormatedDate(fecha,"yyyy-MM-dd"));
 		        citas.setHora(Utils.getFormatedDate(hora, "HH:mm"));

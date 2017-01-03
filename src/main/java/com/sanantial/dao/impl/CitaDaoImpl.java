@@ -10,7 +10,8 @@ import org.hibernate.criterion.Criterion;
 import org.springframework.stereotype.Repository;
 
 import com.sanantial.dao.CitaDao;
-import com.sanantial.entity.Citas;
+import com.sanantial.entity.Cita;
+
 
 /**
  * @author JC
@@ -18,11 +19,11 @@ import com.sanantial.entity.Citas;
  */
 
 @Repository
-public class CitaDaoImpl extends AbstractDaoImpl<Citas, String>
+public class CitaDaoImpl extends AbstractDaoImpl<Cita, String>
 		implements CitaDao {
 
 	protected CitaDaoImpl() {
-		super(Citas.class);
+		super(Cita.class);
 
 	}
 
@@ -30,7 +31,7 @@ public class CitaDaoImpl extends AbstractDaoImpl<Citas, String>
 	 * @see com.sanantial.dao.AbstractDao#findById(java.lang.Integer)
 	 */
 	@Override
-	public Citas findById(Integer id) {
+	public Cita findById(Integer id) {
 		return super.findById(id);
 	}
 
@@ -40,7 +41,7 @@ public class CitaDaoImpl extends AbstractDaoImpl<Citas, String>
 	 * @see com.sanantial.dao.AbstractDao#delete(java.lang.Object)
 	 */
 	@Override
-	public void delete(Citas e) {
+	public void delete(Cita e) {
 		super.delete(e);
 
 	}
@@ -49,7 +50,7 @@ public class CitaDaoImpl extends AbstractDaoImpl<Citas, String>
 	 * @see com.sanantial.dao.AbstractDao#findByCriteria(org.hibernate.criterion.Criterion)
 	 */
 	@Override
-	public List<Citas> findByCriteria(Criterion criterion) {
+	public List<Cita> findByCriteria(Criterion criterion) {
 		   // criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
 		return super.findByCriteria(criterion);
 	}
@@ -58,7 +59,7 @@ public class CitaDaoImpl extends AbstractDaoImpl<Citas, String>
 	 * @see com.sanantial.dao.CitaDao#saveCita(com.sanantial.entity.HistorialCitas)
 	 */
 	@Override
-	public void saveCita(Citas citas) {
+	public void saveCita(Cita citas) {
 		saveOrUpdate(citas);
 	}
 

@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.sanantial.entity.Citas;
+import com.sanantial.entity.Cita;
+
 import com.sanantial.entity.Consulta;
 import com.sanantial.entity.Usuario;
 import com.sanantial.entity.VentaDiaria;
@@ -46,7 +47,7 @@ public class CajaController {
 		 if(LOGGER.isDebugEnabled()){
 			 LOGGER.debug(" Cita ID:"+citasId);
 		 }
-		Citas citas = citaService.findById(citasId);
+		Cita citas = citaService.findById(citasId);
 		model.addAttribute("citas", citas);
 		
 		 model.addAttribute("citas", citas);
@@ -66,7 +67,7 @@ public class CajaController {
 		 }
 		 ventaDiariaService.addConsulta(citasId, Utils.splitStringToInteger(idConsulta));
 		
-		 Citas citas = citaService.findById(citasId);
+		 Cita citas = citaService.findById(citasId);
 		 //System.out.println("pagada: "+citas.getNotaVenta().getPagada());
 		 model.addAttribute("citas", citas);
 		 if (null!=citas.getNotaVenta().getPagada()&&citas.getNotaVenta().getPagada()){
@@ -121,7 +122,7 @@ public class CajaController {
 			 LOGGER.debug("usuario: "+user.getUsuarioId()+" : "+user.getUsuarioNombre());
 		 }
 		 String citasId = request.getParameter("citasId");
-		 Citas cita = citaService.findById(Integer.parseInt(citasId));
+		 Cita cita = citaService.findById(Integer.parseInt(citasId));
 	
 		 HashMap<String, String[]> mapParameters = (HashMap) request.getParameterMap();
 		 String key= "rowTratamiento";
@@ -161,7 +162,7 @@ public class CajaController {
 	   @RequestMapping(value = "/tablero/caja", method = RequestMethod.GET)
 	    public String getTableroCaja(final Model model) {
 		   LOGGER.debug("tablero caja GET-");
-	       List<Citas> listaCitas = citaService.buscarCitasNotEquals(Utils.getFormatedDate(),"NI");;
+	       List<Cita> listaCitas = citaService.buscarCitasNotEquals(Utils.getFormatedDate(),"NI");;
             model.addAttribute("listaCitas", listaCitas);
 	        return "tableroCaja";
 	    }

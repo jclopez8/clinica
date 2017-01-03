@@ -67,7 +67,7 @@ public class IngresoDiarioServiceImpl implements IngresoDiarioService {
 			Ingreso ingreso = ingresoDao.findById(id);
 			//harcodeado temporalmente con el usuario de id = 1
 			Usuario usuario = usuarioDao.findById(1);
-			IngresoDiario ingresoDiario = new IngresoDiario(usuario, ingreso, date);
+			IngresoDiario ingresoDiario = new IngresoDiario(ingreso, usuario, date);
 			System.out.println("Id to Add: "+id);
 			Criterion idToSearch = Restrictions.like("ingreso",ingreso); 
 			 Criterion restrictDate = Restrictions.like("fecha",date); 

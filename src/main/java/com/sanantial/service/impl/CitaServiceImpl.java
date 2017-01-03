@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.sanantial.controller.LoginController;
 import com.sanantial.dao.CitaDao;
 import com.sanantial.dao.TratamientoDao;
-import com.sanantial.entity.Citas;
+import com.sanantial.entity.Cita;
 import com.sanantial.entity.Paciente;
 import com.sanantial.entity.Tratamiento;
 import com.sanantial.service.CitaService;
@@ -36,55 +36,55 @@ public class CitaServiceImpl implements CitaService {
 
 	@Override
 	@Transactional(readOnly = false)
-	public void saveCita(Citas citas) {
+	public void saveCita(Cita citas) {
 		LOGGER.debug("Saving Citas Service");
 		//citas.setFecha(Utils.getFormatedDate());
 		citaDao.saveCita(citas);
 	}
 
 	@Override
-	public List<Citas> buscarCitas(Date date) {
+	public List<Cita> buscarCitas(Date date) {
 		LOGGER.debug("Buscando citasssss date...");
 		 Criterion restrictDate = Restrictions.like("fecha",date); 
-		 List<Citas> citas = citaDao.findByCriteria(restrictDate);
+		 List<Cita> citas = citaDao.findByCriteria(restrictDate);
 		 return citas;
 	
 	}
 	
 	@Override
-	public List<Citas> buscarCitas(Date date, Paciente paciente) {
+	public List<Cita> buscarCitas(Date date, Paciente paciente) {
 		LOGGER.debug("Buscando citasssss date 1...");
 		 Criterion restrictDate = Restrictions.like("fecha",date); 
 		 Criterion restrictPaciente = Restrictions.eq("paciente",paciente); 
-		 List<Citas> citas = citaDao.findByCriteria(Restrictions.and(restrictDate, restrictPaciente));
+		 List<Cita> citas = citaDao.findByCriteria(Restrictions.and(restrictDate, restrictPaciente));
 		
          return citas;
 	
 	}
 	
 	@Override
-	public List<Citas> buscarCitas(Date date, String status) {
+	public List<Cita> buscarCitas(Date date, String status) {
 		LOGGER.debug("Buscando citasssss date 2...");
 		 Criterion restrictDate = Restrictions.eq("fecha",date); 
 		 Criterion restrictStatus = Restrictions.eq("status",status); 
-		 List<Citas> citas = citaDao.findByCriteria(Restrictions.and(restrictDate, restrictStatus));
+		 List<Cita> citas = citaDao.findByCriteria(Restrictions.and(restrictDate, restrictStatus));
 		 System.out.println("citas SIZE DAO::::  "+citas.size());
              return citas;
 	}
 	
 	@Override
-	public List<Citas> buscarCitasNotEquals(Date date, String status) {
+	public List<Cita> buscarCitasNotEquals(Date date, String status) {
 		LOGGER.debug("Buscando buscarCitasNotEquals...");
 		 Criterion restrictDate = Restrictions.eq("fecha",date); 
 		 Criterion restrictStatus = Restrictions.ne("status",status); 
-		 List<Citas> citas = citaDao.findByCriteria(Restrictions.and(restrictDate, restrictStatus));
+		 List<Cita> citas = citaDao.findByCriteria(Restrictions.and(restrictDate, restrictStatus));
 		 return citas;
 	}
 	
 
 	
 	@Override
-	public List<Citas> buscarCitas(Paciente paciente) {
+	public List<Cita> buscarCitas(Paciente paciente) {
 		LOGGER.debug("Buscando by paciente...");
 		Criterion buscarPaciente = Restrictions.like("paciente",paciente); 
         return  citaDao.findByCriteria(buscarPaciente);
@@ -96,7 +96,7 @@ public class CitaServiceImpl implements CitaService {
 	public void addTratamientos(Integer citasId, List<Integer> tratamientosIds) {
 		Set<Tratamiento> setTratamientos =  new HashSet<Tratamiento>(0);
 		Tratamiento tratamiento = new Tratamiento();
-		Citas cita = citaDao.findById(citasId);
+		Cita cita = citaDao.findById(citasId);
 		
 		for (Integer id : tratamientosIds) {
 			tratamiento = tratamientoDao.findById(id);
@@ -127,7 +127,7 @@ public class CitaServiceImpl implements CitaService {
 	@Override
 	@Transactional(readOnly = false)
 	public void actualizarStatusCita(final Integer citasId, final String status) {
-		Citas cita = citaDao.findById(citasId);
+		Cita cita = citaDao.findById(citasId);
 		//System.out.println("Status: "+status);
 		cita.setStatus(status);
 		//System.out.println("after actualizar Cita ID: "+cita.getCitasId()+" status "+cita.getStatus());
@@ -135,7 +135,7 @@ public class CitaServiceImpl implements CitaService {
 	}
 
 	@Override
-	public Citas findById(Integer id) {
+	public Cita findById(Integer id) {
 		return citaDao.findById(id);
 	}
 	
@@ -143,7 +143,7 @@ public class CitaServiceImpl implements CitaService {
 	@Override
 	@Transactional(readOnly = false)
 	public void deleteTratamientos(final Integer citasId, List<Integer> tratamientosIds) {
-		Citas cita = citaDao.findById(citasId);
+		Cita cita = citaDao.findById(citasId);
 		Tratamiento tratamiento;
 		
 		for (Integer id : tratamientosIds) {
@@ -157,7 +157,7 @@ public class CitaServiceImpl implements CitaService {
 	@Override
 	@Transactional(readOnly = false)
 	public void deleteTratamiento(final Integer citasId, final Integer tratamientoId) {
-		Citas cita = citaDao.findById(citasId);
+		Cita cita = citaDao.findById(citasId);
 		System.out.println(" ID : "+tratamientoId);
 		Tratamiento tratamiento=tratamientoDao.findById(tratamientoId);
 		boolean removed= cita.getTratamientos().remove(tratamiento);

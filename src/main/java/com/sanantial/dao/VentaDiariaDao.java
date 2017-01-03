@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.hibernate.criterion.Criterion;
 
-import com.sanantial.entity.Citas;
+
 import com.sanantial.entity.VentaDiaria;
 
 public interface VentaDiariaDao extends AbstractDao<VentaDiaria, String> {

@@ -10,7 +10,7 @@ import org.hibernate.criterion.Criterion;
 import org.springframework.stereotype.Repository;
 
 import com.sanantial.dao.GastoDiarioDao;
-import com.sanantial.entity.Citas;
+
 import com.sanantial.entity.GastoDiario;
 /**
  * @author JC

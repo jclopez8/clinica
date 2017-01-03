@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
-
-import com.sanantial.entity.Citas;
+import com.sanantial.entity.Cita;
 import com.sanantial.entity.Enfermera;
 import com.sanantial.entity.Medicamento;
 import com.sanantial.entity.Paciente;
@@ -58,7 +56,7 @@ public class ClinicaController {
 	    	
 	    	List<Enfermera> listaEnfermeras = enfermeraService.buscarEnfermeras();
 	    	
-	        List<Citas> listaCitas = citaService.buscarCitasNotEquals(Utils.getFormatedDate(),"NI");
+	        List<Cita> listaCitas = citaService.buscarCitasNotEquals(Utils.getFormatedDate(),"NI");
 
 	        model.addAttribute("listaEnfermeras", listaEnfermeras);
             model.addAttribute("listaCitas", listaCitas);
@@ -78,7 +76,7 @@ public class ClinicaController {
 	    	}
 	    	
 
-	        List<Citas> listaCitas = citaService.buscarCitasNotEquals(Utils.getFormatedDate(),"NI");
+	        List<Cita> listaCitas = citaService.buscarCitasNotEquals(Utils.getFormatedDate(),"NI");
 	        List<Enfermera> listaEnfermeras = enfermeraService.buscarEnfermeras();
 
 	        model.addAttribute("listaEnfermeras", listaEnfermeras);
@@ -119,7 +117,7 @@ public class ClinicaController {
 	    @RequestMapping(value = "/salvar/nota", method = RequestMethod.POST)
 	    public String salvarNota(Model model, @RequestParam(required = false, value = "citaToChange") Integer citaToChange, @RequestParam(required = false, value = "observationsToSave")  byte[]  observationsToSave) {
 	    	LOGGER.debug("salvar nota...");
-	    	Citas cita = citaService.findById(citaToChange);
+	    	Cita cita = citaService.findById(citaToChange);
 	    	cita.setObservaciones(observationsToSave);
 	    	citaService.saveCita(cita);
 	    	model.addAttribute("citaToChange", citaToChange);
@@ -131,7 +129,7 @@ public class ClinicaController {
 	    @RequestMapping(value = "/tablero/agregarNota", method = RequestMethod.GET)
 	    public String agregarNota(Model model, @RequestParam("citasId") Integer citasId) {
 	    	LOGGER.debug("agregar nota...");
-	    	Citas cita = citaService.findById(citasId);
+	    	Cita cita = citaService.findById(citasId);
 	    	try {
 	    		String strObservaciones = "";
 	    		 if(cita.getObservaciones()!=null) {
@@ -152,7 +150,7 @@ public class ClinicaController {
 	    @RequestMapping(value = "/historial/mostrarNota", method = RequestMethod.GET)
 	    public String mostrarNota(final Model model, @RequestParam("citasId") final Integer citasId) {
 	    	LOGGER.debug("mostrar Nota...");
-	    	Citas cita = citaService.findById(citasId);
+	    	Cita cita = citaService.findById(citasId);
 	    	try {
 	    		String strObservaciones = "";
 	    		 if(cita.getObservaciones()!=null) {
@@ -176,7 +174,7 @@ public class ClinicaController {
 	    		LOGGER.debug("historial tratamientos... PacienteID: "+pacienteId);
 	    	}  
 	        Paciente paciente = pacienteService.findById(pacienteId);
-	        List<Citas> listaCitas = citaService.buscarCitas(paciente);
+	        List<Cita> listaCitas = citaService.buscarCitas(paciente);
 	        model.addAttribute("listaCitas", listaCitas);
 	    	
 	        return "historialTratamientos";
@@ -367,7 +365,7 @@ public class ClinicaController {
 	    public String getTableroDoctores(final Model model) {
 	    	LOGGER.debug("tablero doctores GET-----");
 	    	
-	        List<Citas> listaCitas = citaService.buscarCitasNotEquals(Utils.getFormatedDate(),"NI");
+	        List<Cita> listaCitas = citaService.buscarCitasNotEquals(Utils.getFormatedDate(),"NI");
             model.addAttribute("listaCitas", listaCitas);
 	        return "tableroDoctores";
 	    }
@@ -384,7 +382,7 @@ public class ClinicaController {
 	    	}
 	    	
 	    	
-	        List<Citas> listaCitas = citaService.buscarCitasNotEquals(Utils.getFormatedDate(),"NI");
+	        List<Cita> listaCitas = citaService.buscarCitasNotEquals(Utils.getFormatedDate(),"NI");
             model.addAttribute("listaCitas", listaCitas);
 	        return "tableroDoctores";
 	    }
@@ -394,7 +392,7 @@ public class ClinicaController {
 	    public String ingresarPaciente(final Model model) {
 	    	
 	    	LOGGER.debug("ingresar paciente..");
-	    	List<Citas> listaCitas = citaService.buscarCitas(Utils.getFormatedDate(),"NI");
+	    	List<Cita> listaCitas = citaService.buscarCitas(Utils.getFormatedDate(),"NI");
 	    	Collections.sort(listaCitas);
             model.addAttribute("listaCitas", listaCitas);
 	        return "ingresarPaciente";
@@ -406,7 +404,7 @@ public class ClinicaController {
 	    	if(LOGGER.isDebugEnabled()){
 	    		LOGGER.debug("ingresar paciente.."+citasId);
 	    	}
-	    	Citas cita = citaService.findById(citasId);
+	    	Cita cita = citaService.findById(citasId);
             cita.setStatus("Sala Espera");
             citaService.saveCita(cita);
 	        return "redirect:/ingresar/paciente";
@@ -419,7 +417,7 @@ public class ClinicaController {
 	    		LOGGER.debug("salvar enfermera...ID: "+enfermeraToAdd);
 	    	}
 	    	final Enfermera enfermera = enfermeraService.findById(enfermeraToAdd);
-	    	Citas cita = citaService.findById(citaToChange);
+	    	Cita cita = citaService.findById(citaToChange);
 	    	cita.setEnfermera(enfermera);
 	    	citaService.saveCita(cita);
 	    	return"redirect:/tablero/enfermeras";

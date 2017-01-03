@@ -15,7 +15,7 @@ import com.sanantial.dao.NotaVentaDao;
 import com.sanantial.dao.TratamientoDao;
 import com.sanantial.dao.UsuarioDao;
 import com.sanantial.dao.VentaDiariaDao;
-import com.sanantial.entity.Citas;
+import com.sanantial.entity.Cita;
 import com.sanantial.entity.Consulta;
 import com.sanantial.entity.Medicamento;
 import com.sanantial.entity.NotaVenta;
@@ -157,7 +157,7 @@ public class VentaDiariaServiceImpl implements VentaDiariaService {
 		 
 			//TODO hardcodeado el id de usuario a 1, temporal
 		 Usuario usuario = usuarioDao.findById(1);
-		 Citas cita = citaDao.findById(citaId);
+		 Cita cita = citaDao.findById(citaId);
 		 NotaVenta notaVenta = cita.getNotaVenta();
 		 VentaDiaria ventaDiaria ;
 			for (Integer id : consultaIds) {
@@ -183,7 +183,7 @@ public class VentaDiariaServiceImpl implements VentaDiariaService {
 		 Consulta consulta = consultaDao.findById(0);
 		//TODO hardcodeado el id de usuario a 1, temporal
 		 Usuario usuario = usuarioDao.findById(1);
-		 Citas cita = citaDao.findById(citaId);
+		 Cita cita = citaDao.findById(citaId);
 		 NotaVenta notaVenta = cita.getNotaVenta();
 		 Medicamento medicamento;
 		 VentaDiaria ventaDiaria ;
